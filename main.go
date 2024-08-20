@@ -38,10 +38,6 @@ func runPipeline(rnd RandIntn, numCount int) int {
 	return <-finalSum
 }
 
-func init() {
-	rand.Seed(time.Now().UnixNano())
-}
-
 func main() {
 	numCount := flag.Int("n", 10_000, "Number of random integers to generate")
 	flag.Parse()
@@ -50,5 +46,8 @@ func main() {
 		*numCount = 10_000
 	}
 
-	runPipeline(rand.Intn, *numCount)
+	seed := time.Now().UnixNano()
+	source := rand.NewSource(seed)
+	rng := rand.New(source)
+	runPipeline(rng.Intn, *numCount)
 }
