@@ -53,7 +53,7 @@ Good luck! We look forward to reviewing your solution.
 
 ## How To Run And Generate Executable
 
-To generate a build and file run with command line flag (**n**) where **n** should be equal or more than 10,000, if **n** is less than, the application defaults to 10,000
+To generate a build file and run with a command line flag (**n**) where **n** should be equal to or more than 10,000, if **n** is less than, the application defaults to 10,000
 
 * go build
 
