@@ -24,8 +24,8 @@ func runPipeline(rnd RandIntn, numCount int) int {
 	done := make(chan struct{})
 	defer close(done)
 
-	genCh := make(chan int, 100)
-	squareCh := make(chan int, 100)
+	genCh := make(chan int, 1000)
+	squareCh := make(chan int, 1000)
 
 	// Pipeline stages
 	go generator(rnd, done, numCount, genCh)
